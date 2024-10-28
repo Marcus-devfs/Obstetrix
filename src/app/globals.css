@@ -2,20 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+::-webkit-scrollbar {
+    width: 6px; /* Largura da scrollbar */
+    height: 6px; /* Altura da scrollbar */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Estilo do trilho (track) */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Cor de fundo do trilho */
+    border-radius: 10px; /* Raio de borda do trilho */
+}
+
+/* Estilo do thumb (alça) */
+::-webkit-scrollbar-thumb {
+    background: #888; /* Cor de fundo do thumb */
+    border-radius: 10px; /* Raio de borda do thumb */
+}
+
+/* Estilo do thumb quando estiver em hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Cor de fundo do thumb em hover */
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    color: var(--foreground);
+    background: var(--background);
 }
