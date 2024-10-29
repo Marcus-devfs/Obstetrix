@@ -7,10 +7,10 @@ import {
 
 export const AboutUs = () => {
     return (
-        <SectionWrapper>
+        <SectionWrapper id="about-us">
             <ContainerWrapper>
-                <CardWrapper className="flex gap-4">
-                    <div className="flex flex-col gap-4 w-full md:w-1/2 items-center md:items-start justify-center">
+                <CardWrapper className="flex flex-col md:flex-row gap-4">
+                    <div className="flex w-full md:w-1/2 items-center justify-center md:justify-start">
                         <Text.H2>About Us</Text.H2>
                     </div>
                     <div className="flex w-full flex-col md:w-1/2">

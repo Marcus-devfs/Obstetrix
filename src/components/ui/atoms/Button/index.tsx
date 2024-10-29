@@ -3,10 +3,11 @@ import { Text } from '../Text'
 
 interface thisProps extends ButtonProps {
     ui?: 'primary' | 'secondary'
+    className?: string
 }
 
-export const Button: React.FC<thisProps> = ({ ui, ...props }) => {
-    let className = ''
+export const Button: React.FC<thisProps> = ({ ui, className, ...props }) => {
+    let classNameBtn = ''
     let textClass = ''
 
     props.variant = props.variant || 'solid'
@@ -14,14 +15,14 @@ export const Button: React.FC<thisProps> = ({ ui, ...props }) => {
     props.radius = props.radius || 'full'
 
     if (ui === 'primary') {
-        className = 'bg-primary'
+        classNameBtn = 'bg-primary'
         textClass = 'text-white'
     } else if (ui === 'secondary') {
-        className = 'bg-gray-100'
+        classNameBtn = 'bg-gray-100'
     }
 
     return (
-        <B className={className} {...props}>
+        <B className={`${classNameBtn} ${className}`} {...props}>
             {typeof props.children === 'string' && (
                 <Text.Button className={textClass}>
                     {props.children}
