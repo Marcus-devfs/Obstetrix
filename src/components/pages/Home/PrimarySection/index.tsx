@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image, { StaticImageData } from 'next/image'
 import { Button, Text } from '@/components/ui/atoms'
 import {
@@ -23,6 +23,21 @@ export const PrimarySection = () => {
         src: image1,
         index: 0,
     })
+
+    const handleNextImage = () => {
+        setActiveImage((prev) => {
+            const nextIndex = (prev.index + 1) % dataImageBannerPrincipal.length
+            return {
+                src: dataImageBannerPrincipal[nextIndex],
+                index: nextIndex,
+            }
+        })
+    }
+
+    useEffect(() => {
+        const interval = setInterval(handleNextImage, 3000)
+        return () => clearInterval(interval)
+    }, [])
 
     return (
         <SectionWrapper id="home">

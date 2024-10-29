@@ -7,6 +7,7 @@ import { dataMenuLp } from '@/helpers/mockups'
 import { itemMenuLpProps } from '@/helpers/typesAndInterfaces'
 import { SectionWrapper, ContainerWrapper } from '@/components/wrappers'
 import { GiWireframeGlobe } from 'react-icons/gi'
+import { FiDollarSign } from 'react-icons/fi'
 
 export const HeaderLp = () => {
     return (
@@ -27,10 +28,19 @@ export const HeaderLp = () => {
                     </div>
                     <Navigator />
                     <Button
+                        className="hidden md:flex"
                         ui="primary"
                         endContent={<MdArrowForward color="white" />}
                     >
                         Assinar
+                    </Button>
+
+                    <Button
+                        isIconOnly
+                        className="flex md:hidden w-fit"
+                        ui="primary"
+                    >
+                        <FiDollarSign color="white" size={16} />
                     </Button>
                 </div>
             </ContainerWrapper>

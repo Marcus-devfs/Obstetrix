@@ -23,7 +23,7 @@ export const SecondarySection = () => {
                                 className="w-full h-full object-contain"
                             />
                         </div>
-                        <Text.Customize className="!text-primary text-[16px] md:text-[20px] font-semibold">
+                        <Text.Customize className="!text-primary text-[16px] md:text-[20px] font-semibold text-center md:text-start">
                             Who We Are
                         </Text.Customize>
                         <Text.Content>
@@ -44,7 +44,7 @@ export const SecondarySection = () => {
                                 className="w-full h-full object-contain"
                             />
                         </div>
-                        <Text.Customize className="!text-primary text-[16px] md:text-[20px] font-semibold">
+                        <Text.Customize className="!text-primary text-[16px] md:text-[20px] font-semibold text-center md:text-start">
                             Our Technology
                         </Text.Customize>
                         <Text.Content>
