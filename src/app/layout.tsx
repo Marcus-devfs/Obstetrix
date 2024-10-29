@@ -11,6 +11,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
     title: 'Obstetrix',
     description: 'Uma plataforma pensada em facilitar a vida do obstetra',
+    viewport: 'width=device-width, initial-scale=1.0, user-scalable=no',
 }
 
 export default function RootLayout({
