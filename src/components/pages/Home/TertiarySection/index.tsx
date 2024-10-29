@@ -17,11 +17,11 @@ export const TertiarySection = () => {
         <SectionWrapper id="plataform">
             <ContainerWrapper>
                 <CardWrapper className="flex flex-col gap-4">
-                    <Text.Customize className="!text-primary text-[16px] md:text-[20px] font-semibold">
+                    <Text.Customize className="!text-primary text-[16px] md:text-[20px] font-semibold text-center md:text-start">
                         What We Do
                     </Text.Customize>
                     <div className="flex flex-col md:flex-row gap-4">
-                        <div className="flex flex-col gap-4 w-full md:w-1/2 items-center md:items-start justify-center">
+                        <div className="flex flex-col gap-4 w-full md:w-1/2 items-center md:items-start justify-center order-2 md:order-1">
                             <Text.H2>
                                 Advanced Medical Insights for Optimal Patient
                                 Care
@@ -38,7 +38,7 @@ export const TertiarySection = () => {
                                 Saiba mais
                             </Button>
                         </div>
-                        <div className="flex w-full flex-col md:w-1/2">
+                        <div className="flex w-full flex-col md:w-1/2 order-1 md:order-2">
                             <div className="w-full h-96">
                                 <Image
                                     width={1280}
@@ -81,7 +81,7 @@ export const TertiarySection = () => {
                         </div>
                     </div>
                     <div className="flex flex-col md:flex-row gap-4">
-                        <div className="flex flex-col gap-4 w-full md:w-1/2 items-center md:items-start justify-center">
+                        <div className="flex flex-col gap-4 w-full md:w-1/2 items-center md:items-start justify-center order-2 md:order-1">
                             <Text.H2>
                                 Advanced Medical Insights for Optimal Patient
                                 Care
@@ -98,7 +98,7 @@ export const TertiarySection = () => {
                                 Saiba mais
                             </Button>
                         </div>
-                        <div className="flex w-full flex-col md:w-1/2">
+                        <div className="flex w-full flex-col md:w-1/2 order-1 md:order-2">
                             <div className="w-full h-96">
                                 <Image
                                     width={1280}
