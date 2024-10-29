@@ -19,7 +19,9 @@ export const FooterLp = () => {
                                 className="mr-1"
                             />
                             <Text.H3 className="text-white">Obstetrix</Text.H3>
-                            <Text.Customize>PRO</Text.Customize>
+                            <Text.Customize className="text-white">
+                                PRO
+                            </Text.Customize>
                             <span className="text-white text-lg font-semibold">
                                 *
                             </span>
