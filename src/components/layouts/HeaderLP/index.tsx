@@ -12,14 +12,15 @@ export const HeaderLp = () => {
     return (
         <SectionWrapper>
             <ContainerWrapper>
-                <div className="w-full py-4 flex items-center justify-between">
+                <div className="w-full py-4 flex items-center justify-between flex-wrap gap-2">
                     <div className="flex items-center justify-center">
                         <GiWireframeGlobe
                             color="#3b82f6"
                             size={30}
                             className="mr-1"
                         />
-                        <Text.H3>Obstetrix</Text.H3>
+                        <Text.H3 className="hidden md:block">Obstetrix</Text.H3>
+                        <Text.Customize>PRO</Text.Customize>
                         <span className="text-primary text-lg font-semibold">
                             *
                         </span>
@@ -29,7 +30,7 @@ export const HeaderLp = () => {
                         ui="primary"
                         endContent={<MdArrowForward color="white" />}
                     >
-                        Quero Assinar
+                        Assinar
                     </Button>
                 </div>
             </ContainerWrapper>
@@ -39,6 +40,12 @@ export const HeaderLp = () => {
 
 const Navigator = () => {
     const [itemActive, setItemActive] = useState<string>('home')
+
+    const handleClick = (value: string) => {
+        setItemActive(value)
+        const element = document.getElementById(value)
+        element?.scrollIntoView({ behavior: 'smooth' })
+    }
     return (
         <div className=" bg-white h-full rounded-full flex p-1">
             {dataMenuLp.map((item: itemMenuLpProps, index: number) => (
@@ -50,7 +57,7 @@ const Navigator = () => {
                     active={itemActive === item.value}
                     title={item.title}
                     value={item.value}
-                    onClick={(value: string) => setItemActive(value)}
+                    onClick={(value: string) => handleClick(value)}
                 />
             ))}
         </div>
@@ -82,7 +89,7 @@ const ItemNavigator: React.FC<ItemNavigatorProps> = ({
             >
                 {icon}
             </div>
-            <div className="pl-1 pr-4">
+            <div className="hidden lg:block pl-1 pr-4">
                 <Text.Button
                     className={`${active ? '!text-primary' : '!text-gray-400'} group-hover:text-opacity-60`}
                 >

@@ -1,7 +1,9 @@
 import { PageWrapper } from '@/components/wrappers'
 import { PrimarySection } from './PrimarySection'
+import { TertiarySection } from './TertiarySection'
 import { AboutUs } from './AboutUs'
 import { SecondarySection } from './SecondarySection'
+import { ContactUs } from './ContactUs'
 
 export const HomePage = () => {
     return (
@@ -9,7 +11,8 @@ export const HomePage = () => {
             <PrimarySection />
             <AboutUs />
             <SecondarySection />
-            <PrimarySection />
+            <TertiarySection />
+            <ContactUs />
         </PageWrapper>
     )
 }

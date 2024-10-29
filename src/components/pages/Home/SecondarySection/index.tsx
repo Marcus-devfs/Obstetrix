@@ -13,7 +13,7 @@ export const SecondarySection = () => {
         <SectionWrapper>
             <ContainerWrapper>
                 <div className="flex flex-col md:flex-row gap-4">
-                    <CardWrapper className="flex flex-col">
+                    <CardWrapper className="flex flex-col gap-4">
                         <div className="h-64">
                             <Image
                                 width={1280}
@@ -23,7 +23,9 @@ export const SecondarySection = () => {
                                 className="w-full h-full object-contain"
                             />
                         </div>
-                        <Text.H2 className="!text-primary">Who We Are</Text.H2>
+                        <Text.Customize className="!text-primary text-[16px] md:text-[20px] font-semibold">
+                            Who We Are
+                        </Text.Customize>
                         <Text.Content>
                             Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit. Nulla facilisi. Cras vitae sapien ac nulla
@@ -32,7 +34,7 @@ export const SecondarySection = () => {
                             dignissim tempus ut at tortor.
                         </Text.Content>
                     </CardWrapper>
-                    <CardWrapper className="flex flex-col">
+                    <CardWrapper className="flex flex-col gap-4">
                         <div className="h-64">
                             <Image
                                 width={1280}
@@ -42,9 +44,9 @@ export const SecondarySection = () => {
                                 className="w-full h-full object-contain"
                             />
                         </div>
-                        <Text.H2 className="!text-primary">
+                        <Text.Customize className="!text-primary text-[16px] md:text-[20px] font-semibold">
                             Our Technology
-                        </Text.H2>
+                        </Text.Customize>
                         <Text.Content>
                             Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit. Nulla facilisi. Cras vitae sapien ac nulla

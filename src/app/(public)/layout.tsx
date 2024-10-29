@@ -1,5 +1,5 @@
 import { ChildrenProps } from '@/helpers/typesAndInterfaces'
-import { HeaderLp } from '@/components/layouts'
+import { HeaderLp, FooterLp } from '@/components/layouts'
 
 const Layout: React.FC<ChildrenProps> = ({ children }) => {
     return (
@@ -7,6 +7,7 @@ const Layout: React.FC<ChildrenProps> = ({ children }) => {
             <HeaderLp />
             <div className="overflow-y-auto" id="scroll-div">
                 <div className="flex flex-1 justify-center">{children}</div>
+                <FooterLp />
             </div>
         </div>
     )

@@ -1,6 +1,6 @@
 import { RiHome6Fill } from 'react-icons/ri'
 import { LuInfo } from 'react-icons/lu'
-import { BsCurrencyDollar } from 'react-icons/bs'
+import { CgWebsite } from 'react-icons/cg'
 import { LuContact } from 'react-icons/lu'
 import { itemMenuLpProps } from '../typesAndInterfaces'
 import image1 from '../../../public/image1.png'
@@ -23,10 +23,10 @@ export const dataMenuLp: Array<itemMenuLpProps> = [
         activeIcon: <LuInfo color="white" size={16} />,
     },
     {
-        value: 'pricing',
-        title: 'Preços',
-        icon: <BsCurrencyDollar color="#9ca3af" size={16} />,
-        activeIcon: <BsCurrencyDollar color="white" />,
+        value: 'plataform',
+        title: 'Plataforma',
+        icon: <CgWebsite color="#9ca3af" size={16} />,
+        activeIcon: <CgWebsite color="white" />,
     },
     {
         value: 'contact-us',

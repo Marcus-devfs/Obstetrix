@@ -13,7 +13,7 @@ const H1: React.FC<ChildrenWithClassName> = ({ children, className = '' }) => {
 const H2: React.FC<ChildrenWithClassName> = ({ children, className = '' }) => {
     return (
         <h2
-            className={`text-[18px] md:text-[24px] font-semibold text-center md:text-start ${className}`}
+            className={`text-[20px] md:text-3xl font-semibold text-center md:text-start ${className}`}
         >
             {children}
         </h2>
@@ -23,7 +23,7 @@ const H2: React.FC<ChildrenWithClassName> = ({ children, className = '' }) => {
 const H3: React.FC<ChildrenWithClassName> = ({ children, className = '' }) => {
     return (
         <h3
-            className={`text-[16px] font-semibold text-center md:text-start ${className}`}
+            className={`text-[16px] md:text-xl font-semibold text-center md:text-start ${className}`}
         >
             {children}
         </h3>
