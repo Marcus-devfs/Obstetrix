@@ -53,8 +53,19 @@ const Navigator = () => {
 
     const handleClick = (value: string) => {
         setItemActive(value)
+
         const element = document.getElementById(value)
-        element?.scrollIntoView({ behavior: 'smooth' })
+        const scrollContainer = document.getElementById('scroll-div')
+
+        if (element && scrollContainer) {
+            const elementPosition =
+                element.offsetTop - scrollContainer.offsetTop
+
+            scrollContainer.scrollTo({
+                top: elementPosition,
+                behavior: 'smooth',
+            })
+        }
     }
     return (
         <div className=" bg-white h-full rounded-full flex p-1">
