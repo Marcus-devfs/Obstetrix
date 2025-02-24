@@ -56,7 +56,14 @@ export const Sidebar = ({ menuGroups }: SidebarProps) => {
                                                 )}
                                             >
                                                 {icon && (
-                                                    <span className="mr-2 text-gray-400">
+                                                    <span
+                                                        className={cn(
+                                                            'mr-2',
+                                                            isActive
+                                                                ? 'text-primary'
+                                                                : 'text-gray-400'
+                                                        )}
+                                                    >
                                                         {icon}
                                                     </span>
                                                 )}

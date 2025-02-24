@@ -49,7 +49,7 @@ export const menuGroups = [
                 link: '/',
                 icon: <FaCog />,
                 badge: 'Novo',
-                badgeColor: 'bg-red-500 text-primary',
+                badgeColor: 'text-primary',
             },
         ],
     },

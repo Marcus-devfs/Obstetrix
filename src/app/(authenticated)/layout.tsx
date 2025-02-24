@@ -16,7 +16,7 @@ export default function AuthenticatedLayout({
     return (
         <div className={`flex bg-white ${poppins.className}`}>
             <Sidebar menuGroups={menuGroups} />
-            <main className="flex-grow p-4">{children}</main>
+            <main className="flex-grow px-12 pt-24">{children}</main>
         </div>
     )
 }
