@@ -1,3 +1,4 @@
 import { FormContactUs } from './FormContactUs'
+import { FormLogin } from './FormLogin'
 
-export { FormContactUs }
+export { FormContactUs, FormLogin }
