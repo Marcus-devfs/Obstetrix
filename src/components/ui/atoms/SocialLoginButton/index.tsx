@@ -1,8 +1,8 @@
 'use client'
 
 import React from 'react'
-import { FaGoogle, FaFacebook } from 'react-icons/fa' // Ícones do Google e Facebook
-import { AiOutlineMail } from 'react-icons/ai' // Ícone do Email
+import { FaFacebook } from 'react-icons/fa' // Ícones do Google e Facebook
+import { FcGoogle } from 'react-icons/fc' // Ícone do Email
 import { ButtonProps } from '../../shadcn/button'
 import { Text } from '..'
 
@@ -14,12 +14,12 @@ interface thisProps extends ButtonProps {
 export const SocialLoginButtons: React.FC<thisProps> = () => {
     return (
         <div className="flex gap-2">
-            <button className="w-full h-12 bg-red-500 text-white py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-red-600 transition duration-200">
-                <FaGoogle className="text-white" />
+            <button className="w-full h-12 border border-gray py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100 transition duration-200">
+                <FcGoogle />
                 <Text.Button>Google</Text.Button>
             </button>
-            <button className="h-12 w-full bg-blue-600 text-white py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-blue-700 transition duration-200">
-                <FaFacebook className="text-white" />
+            <button className="h-12 w-full py-2 border border-gray rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100 transition duration-200">
+                <FaFacebook className="text-[#3B5998]" />
                 <Text.Button>Facebook</Text.Button>
             </button>
         </div>
