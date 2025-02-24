@@ -31,7 +31,9 @@ export const useContactUsHook = () => {
     })
 
     async function handleSubmit(data: z.infer<typeof FormSchema>) {
+        setLoading(true)
         console.log(data)
+        setLoading(false)
     }
 
     return {

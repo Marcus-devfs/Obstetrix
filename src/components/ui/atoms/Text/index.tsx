@@ -30,13 +30,23 @@ const H3: React.FC<ChildrenWithClassName> = ({ children, className = '' }) => {
     )
 }
 
+const H4: React.FC<ChildrenWithClassName> = ({ children, className = '' }) => {
+    return (
+        <h4
+            className={`text-[15px] font-semibold text-center md:text-start ${className}`}
+        >
+            {children}
+        </h4>
+    )
+}
+
 const Content: React.FC<ChildrenWithClassName> = ({
     children,
     className = '',
 }) => {
     return (
         <p
-            className={`text-[14px] font-light text-center md:text-start ${className}`}
+            className={`text-[13px] font-light text-center md:text-start ${className}`}
         >
             {children}
         </p>
@@ -93,6 +103,7 @@ export const Text = {
     H1,
     H2,
     H3,
+    H4,
     Content,
     Stick,
     LightButton,

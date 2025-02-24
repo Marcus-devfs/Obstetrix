@@ -1,6 +1,6 @@
 import { FormLogin } from '@/components/forms'
 import { SocialLoginButtons, Text } from '@/components/ui/atoms'
-import { CardWrapper, ContainerWrapper } from '@/components/wrappers'
+import { ContainerWrapper } from '@/components/wrappers'
 import { GiWireframeGlobe } from 'react-icons/gi'
 
 export default function LoginPage() {

@@ -14,8 +14,7 @@ import { Button } from '@/components/ui/atoms'
 import { MdArrowForward, MdLock } from 'react-icons/md'
 
 export const FormLogin = () => {
-    const { form, handleSubmit, loading, formSend, setFormSend } =
-        useLoginHook()
+    const { form, handleSubmit, loading } = useLoginHook()
 
     return (
         <Form {...form}>

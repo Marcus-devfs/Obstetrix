@@ -8,6 +8,7 @@ import { itemMenuLpProps } from '@/helpers/typesAndInterfaces'
 import { SectionWrapper, ContainerWrapper } from '@/components/wrappers'
 import { GiWireframeGlobe } from 'react-icons/gi'
 import { FiDollarSign } from 'react-icons/fi'
+import Link from 'next/link'
 
 export const HeaderLp = () => {
     return (
@@ -27,13 +28,15 @@ export const HeaderLp = () => {
                         </span>
                     </div>
                     <Navigator />
-                    <Button
-                        className="hidden md:flex"
-                        ui="primary"
-                        endContent={<MdArrowForward color="white" />}
-                    >
-                        Assinar
-                    </Button>
+                    <Link href="/login">
+                        <Button
+                            className="hidden md:flex"
+                            ui="primary"
+                            endContent={<MdArrowForward color="white" />}
+                        >
+                            Fazer Login
+                        </Button>
+                    </Link>
 
                     <Button
                         isIconOnly

@@ -8,6 +8,7 @@ import image2 from '../../../public/image2.png'
 import image3 from '../../../public/image3.png'
 import image4 from '../../../public/image4.png'
 import image5 from '../../../public/image5.png'
+import { FaHome, FaUser, FaCog, FaChartBar } from 'react-icons/fa'
 
 export const dataMenuLp: Array<itemMenuLpProps> = [
     {
@@ -37,3 +38,26 @@ export const dataMenuLp: Array<itemMenuLpProps> = [
 ]
 
 export const dataImageBannerPrincipal = [image1, image2, image3, image4, image5]
+
+export const menuGroups = [
+    {
+        title: 'Menu',
+        items: [
+            { label: 'Dashboard', link: '/dashboard', icon: <FaHome /> },
+            {
+                label: 'Configurações',
+                link: '/',
+                icon: <FaCog />,
+                badge: 'Novo',
+                badgeColor: 'bg-red-500 text-primary',
+            },
+        ],
+    },
+    {
+        title: 'Administração',
+        items: [
+            { label: 'Usuários', link: '/', icon: <FaUser /> },
+            { label: 'Relatórios', link: '/', icon: <FaChartBar /> },
+        ],
+    },
+]

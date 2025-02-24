@@ -16,8 +16,7 @@ import { Button } from '@/components/ui/atoms'
 import { MdArrowForward } from 'react-icons/md'
 
 export const FormContactUs = () => {
-    const { form, handleSubmit, loading, formSend, setFormSend } =
-        useContactUsHook()
+    const { form, handleSubmit, loading } = useContactUsHook()
 
     return (
         <Form {...form}>
