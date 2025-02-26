@@ -1,5 +1,5 @@
-import { Text } from '@/components/ui/atoms'
-import { Button } from '@nextui-org/react'
+import { Button, Text } from '@/components/ui/atoms'
+import { Button as ButtonNext } from '@nextui-org/react'
 import { Filter, Plus } from 'lucide-react'
 
 type HeaderTableProps = {
@@ -22,17 +22,17 @@ export const HeaderTable: React.FC<HeaderTableProps> = ({
                 <Text.Content>{title}</Text.Content>
             </div>
             <div className="flex gap-2">
-                <Button
+                <ButtonNext
                     variant="light"
                     startContent={<Filter size={16} />}
                     onClick={onFilterClick}
                 >
                     Filtros
-                </Button>
+                </ButtonNext>
+
                 <Button
-                    color="primary"
-                    startContent={<Plus size={16} />}
-                    onClick={onAddClick}
+                    ui="primary"
+                    endContent={<Plus size={16} color="white" />}
                 >
                     Adicionar
                 </Button>

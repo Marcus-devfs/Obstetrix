@@ -7,39 +7,54 @@ import { Button } from '@nextui-org/react'
 import { Edit, Trash } from 'lucide-react'
 import Image from 'next/image'
 import { Text } from '@/components/ui/atoms'
+import { FaWhatsapp } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
 
-interface User {
+interface Patient {
     id: number
     name: string
     email: string
     avatar: string
+    telephone: string
+    lastVisit: string
 }
 
 interface Row {
-    original: User
+    original: Patient
 }
 
-const users: User[] = [
+const patients: Patient[] = [
     {
         id: 1,
-        name: 'João Silva',
-        email: 'joao@email.com',
-        avatar: 'https://randomuser.me/api/portraits/men/1.jpg',
+        name: 'Marcus Silva',
+        email: 'marcus.silva@email.com',
+        telephone: '123456789',
+        lastVisit: '2023-01-01',
+        avatar: 'https://randomuser.me/api/portraits/men/5.jpg',
     },
     {
         id: 2,
-        name: 'Maria Oliveira',
-        email: 'maria@email.com',
-        avatar: 'https://randomuser.me/api/portraits/women/2.jpg',
+        name: 'Marcia Silva',
+        email: 'marcia.SILVA@email.com',
+        telephone: '123456789',
+        lastVisit: '2023-01-01',
+        avatar: 'https://randomuser.me/api/portraits/women/4.jpg',
+    },
+    {
+        id: 3,
+        name: 'Maria Silva',
+        email: 'maria.silva@email.com',
+        telephone: '123456789',
+        lastVisit: '2023-01-01',
+        avatar: 'https://randomuser.me/api/portraits/women/3.jpg',
     },
 ]
 
-export const UsersList = () => {
-    const [selectedUsers, setSelectedUsers] = useState<number[]>([])
+export const PatientsList = () => {
+    const [selectedPatients, setSelectedPatients] = useState<number[]>([])
 
     const toggleSelectUser = (id: number) => {
-        setSelectedUsers((prev) =>
+        setSelectedPatients((prev) =>
             prev.includes(id) ? prev.filter((uid) => uid !== id) : [...prev, id]
         )
     }
@@ -50,7 +65,7 @@ export const UsersList = () => {
             header: <Checkbox aria-label="Selecionar Todos" />,
             cell: ({ row }: { row: Row }) => (
                 <Checkbox
-                    isSelected={selectedUsers.includes(row.original.id)}
+                    isSelected={selectedPatients.includes(row.original.id)}
                     onChange={() => toggleSelectUser(row.original.id)}
                     aria-label={`Selecionar ${row.original.name}`}
                 />
@@ -58,7 +73,7 @@ export const UsersList = () => {
         },
         {
             id: 'user',
-            header: 'Usuário',
+            header: 'Paciente',
             cell: ({ row }: { row: Row }) => (
                 <div className="flex items-center gap-3">
                     <Image
@@ -73,6 +88,16 @@ export const UsersList = () => {
             ),
         },
         {
+            id: 'telephone',
+            header: 'Telefone',
+            cell: ({ row }: { row: Row }) => (
+                <div className="flex items-center gap-3">
+                    <FaWhatsapp />
+                    <Text.Content>{row.original.telephone}</Text.Content>
+                </div>
+            ),
+        },
+        {
             id: 'email',
             header: 'Email',
             cell: ({ row }: { row: Row }) => (
@@ -80,6 +105,13 @@ export const UsersList = () => {
                     <MdEmail />
                     <Text.Content>{row.original.email}</Text.Content>
                 </div>
+            ),
+        },
+        {
+            id: 'lastVisit',
+            header: 'Ultima visita',
+            cell: ({ row }: { row: Row }) => (
+                <Text.Content>{row.original.lastVisit}</Text.Content>
             ),
         },
         {
@@ -99,22 +131,22 @@ export const UsersList = () => {
     ]
 
     const handleFilter = () => {
-        console.log('Filtrar Usuários')
+        console.log('Filtrar Paciente')
     }
 
     const handleAddUser = () => {
-        console.log('Adicionar Usuário')
+        console.log('Adicionar Paciente')
     }
 
     return (
         <div className="w-full px-2 pt-4">
             <HeaderTable
-                title="Total de Usuários"
-                count={users.length}
+                title="Total de Pacientes"
+                count={patients.length}
                 onFilterClick={handleFilter}
                 onAddClick={handleAddUser}
             />
-            <Table columns={columns} data={users} />
+            <Table columns={columns} data={patients} />
         </div>
     )
 }

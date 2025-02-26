@@ -43,21 +43,26 @@ export const menuGroups = [
     {
         title: 'Clinica',
         items: [
-            { label: 'Dashboard', link: '/dashboard', icon: <FaHome /> },
             {
-                label: 'Configurações',
-                link: '/',
-                icon: <FaCog />,
+                label: 'Dashboard',
+                link: '/dashboard',
+                icon: <FaHome />,
                 badge: 'Novo',
                 badgeColor: 'text-primary',
             },
+            { label: 'Pacientes', link: '/patients', icon: <FaUser /> },
         ],
     },
     {
         title: 'Administração',
         items: [
             { label: 'Usuários', link: '/users', icon: <FaUser /> },
-            { label: 'Relatórios', link: '/', icon: <FaChartBar /> },
+            { label: 'Clinicas', link: '/clinics', icon: <FaChartBar /> },
+            {
+                label: 'Configurações',
+                link: '/config',
+                icon: <FaCog />,
+            },
         ],
     },
 ]
