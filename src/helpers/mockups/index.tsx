@@ -41,7 +41,7 @@ export const dataImageBannerPrincipal = [image1, image2, image3, image4, image5]
 
 export const menuGroups = [
     {
-        title: 'Menu',
+        title: 'Clinica',
         items: [
             { label: 'Dashboard', link: '/dashboard', icon: <FaHome /> },
             {
@@ -56,7 +56,7 @@ export const menuGroups = [
     {
         title: 'Administração',
         items: [
-            { label: 'Usuários', link: '/', icon: <FaUser /> },
+            { label: 'Usuários', link: '/users', icon: <FaUser /> },
             { label: 'Relatórios', link: '/', icon: <FaChartBar /> },
         ],
     },
