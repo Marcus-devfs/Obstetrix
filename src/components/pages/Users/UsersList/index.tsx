@@ -6,8 +6,20 @@ import { Checkbox } from '@nextui-org/react'
 import { Button } from '@nextui-org/react'
 import { Edit, Trash } from 'lucide-react'
 import Image from 'next/image'
+import { Text } from '@/components/ui/atoms'
 
-const users = [
+interface User {
+    id: number
+    name: string
+    email: string
+    avatar: string
+}
+
+interface Row {
+    original: User
+}
+
+const users: User[] = [
     {
         id: 1,
         name: 'João Silva',
@@ -35,7 +47,7 @@ export const UsersList = () => {
         {
             id: 'select',
             header: <Checkbox aria-label="Selecionar Todos" />,
-            cell: ({ row }: any) => (
+            cell: ({ row }: { row: Row }) => (
                 <Checkbox
                     isSelected={selectedUsers.includes(row.original.id)}
                     onChange={() => toggleSelectUser(row.original.id)}
@@ -46,7 +58,7 @@ export const UsersList = () => {
         {
             id: 'user',
             header: 'Usuário',
-            cell: ({ row }: any) => (
+            cell: ({ row }: { row: Row }) => (
                 <div className="flex items-center gap-3">
                     <Image
                         src={row.original.avatar}
@@ -55,19 +67,21 @@ export const UsersList = () => {
                         height={32}
                         className="rounded-full"
                     />
-                    <span>{row.original.name}</span>
+                    <Text.Content>{row.original.name}</Text.Content>
                 </div>
             ),
         },
         {
             id: 'email',
             header: 'Email',
-            cell: ({ row }: any) => <span>{row.original.email}</span>,
+            cell: ({ row }: { row: Row }) => (
+                <Text.Content>{row.original.email}</Text.Content>
+            ),
         },
         {
             id: 'actions',
             header: 'Ações',
-            cell: ({ row }: any) => (
+            cell: ({ row }: { row: Row }) => (
                 <div className="flex gap-2">
                     <Button variant="light" isIconOnly>
                         <Edit className="w-4 h-4" />
