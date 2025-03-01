@@ -33,6 +33,7 @@ export const HeaderTable: React.FC<HeaderTableProps> = ({
                 <Button
                     ui="primary"
                     endContent={<Plus size={16} color="white" />}
+                    onClick={onAddClick}
                 >
                     Adicionar
                 </Button>

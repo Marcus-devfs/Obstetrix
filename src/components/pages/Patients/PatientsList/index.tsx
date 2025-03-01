@@ -9,6 +9,7 @@ import Image from 'next/image'
 import { Text } from '@/components/ui/atoms'
 import { FaWhatsapp } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
+import { useRouter } from 'next/navigation'
 
 interface Patient {
     id: number
@@ -52,6 +53,7 @@ const patients: Patient[] = [
 
 export const PatientsList = () => {
     const [selectedPatients, setSelectedPatients] = useState<number[]>([])
+    const router = useRouter()
 
     const toggleSelectUser = (id: number) => {
         setSelectedPatients((prev) =>
@@ -135,7 +137,7 @@ export const PatientsList = () => {
     }
 
     const handleAddUser = () => {
-        console.log('Adicionar Paciente')
+        router.push('/patients/new')
     }
 
     return (
