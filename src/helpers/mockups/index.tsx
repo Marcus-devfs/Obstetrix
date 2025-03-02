@@ -8,7 +8,7 @@ import image2 from '../../../public/image2.png'
 import image3 from '../../../public/image3.png'
 import image4 from '../../../public/image4.png'
 import image5 from '../../../public/image5.png'
-import { FaHome, FaUser, FaCog, FaChartBar } from 'react-icons/fa'
+import { FaHome, FaUser, FaCog, FaChartBar, FaCalendar } from 'react-icons/fa'
 
 export const dataMenuLp: Array<itemMenuLpProps> = [
     {
@@ -51,6 +51,11 @@ export const menuGroups = [
                 badgeColor: 'text-primary',
             },
             { label: 'Pacientes', link: '/patients', icon: <FaUser /> },
+            {
+                label: 'Agendamentos',
+                link: '/appointments',
+                icon: <FaCalendar />,
+            },
         ],
     },
     {

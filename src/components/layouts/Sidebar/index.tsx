@@ -38,7 +38,7 @@ export const Sidebar = ({ menuGroups }: SidebarProps) => {
 
             <nav>
                 {menuGroups.map(({ title, items }) => (
-                    <div key={title} className="mb-4">
+                    <div key={`${title}-${items[0].link}`} className="mb-4">
                         <Text.H4 className="mb-2">{title}</Text.H4>
                         <ul className="space-y-2">
                             {items.map(

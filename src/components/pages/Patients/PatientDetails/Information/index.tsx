@@ -1,4 +1,4 @@
-import { FormPatientInformation } from '@/components/forms/FormPatient'
+import { FormPatientInformation } from '@/components/forms'
 
 export const InformationPatient = () => {
     return (

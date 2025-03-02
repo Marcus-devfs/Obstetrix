@@ -18,9 +18,9 @@ export const Table = <T,>({ columns, data }: TableProps<T>) => {
                 <table className="w-full mt-4 text-left table-auto min-w-max">
                     <thead>
                         <tr>
-                            {columns.map((col) => (
+                            {columns.map((col, index) => (
                                 <th
-                                    key={col.id}
+                                    key={`${col.id}-${index}`}
                                     className="p-4 border-y border-gray-200 bg-gray-50 text-sm font-semibold text-gray-700"
                                 >
                                     {col.header}
@@ -31,12 +31,12 @@ export const Table = <T,>({ columns, data }: TableProps<T>) => {
                     <tbody>
                         {data.map((item, rowIndex) => (
                             <tr
-                                key={rowIndex}
+                                key={`${rowIndex}-${item}`}
                                 className="border-b border-gray-100 hover:bg-gray-50"
                             >
-                                {columns.map((col) => (
+                                {columns.map((col, index) => (
                                     <td
-                                        key={col.id}
+                                        key={`${col.id}-${index}-${rowIndex}`}
                                         className="p-4 text-sm text-gray-700"
                                     >
                                         {col.cell({ row: { original: item } })}

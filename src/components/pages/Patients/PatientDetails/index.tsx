@@ -16,11 +16,11 @@ interface Patient {
 
 const menuHeaderPatient = [
     {
-        label: 'Patient Information',
+        label: 'Informações',
         select: 'information',
     },
     {
-        label: 'Appointments',
+        label: 'Agendamentos',
         select: 'appointments',
     },
 ]
@@ -66,7 +66,7 @@ export const PatientDetails = ({
                     const isSelected = selectedMenu === item.select
                     return (
                         <button
-                            key={index}
+                            key={`${item.select}-${index}`}
                             className={`px-4 py-2 border-b-2 border-b-2 hover:border-blue-500 focus:outline-none ${isSelected ? 'text-blue-500 border-blue-500' : 'border-gray-200 text-gray-400'}`}
                             onClick={() => handleMenuClick(item.select)}
                         >

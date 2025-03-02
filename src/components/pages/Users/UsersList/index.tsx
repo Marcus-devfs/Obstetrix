@@ -8,6 +8,7 @@ import { Edit, Trash } from 'lucide-react'
 import Image from 'next/image'
 import { Text } from '@/components/ui/atoms'
 import { MdEmail } from 'react-icons/md'
+import { useRouter } from 'next/navigation'
 
 interface User {
     id: number
@@ -37,6 +38,7 @@ const users: User[] = [
 
 export const UsersList = () => {
     const [selectedUsers, setSelectedUsers] = useState<number[]>([])
+    const router = useRouter()
 
     const toggleSelectUser = (id: number) => {
         setSelectedUsers((prev) =>
@@ -103,7 +105,7 @@ export const UsersList = () => {
     }
 
     const handleAddUser = () => {
-        console.log('Adicionar Usuário')
+        router.push('/users/new')
     }
 
     return (

@@ -74,7 +74,7 @@ const Navigator = () => {
         <div className=" bg-white h-full rounded-full flex p-1">
             {dataMenuLp.map((item: itemMenuLpProps, index: number) => (
                 <ItemNavigator
-                    key={`itemNavigator-${index}`}
+                    key={`itemNavigator-${index}-${item.value}`}
                     icon={
                         itemActive === item.value ? item.activeIcon : item.icon
                     }
