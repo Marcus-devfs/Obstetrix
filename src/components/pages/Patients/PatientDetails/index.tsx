@@ -62,15 +62,18 @@ export const PatientDetails = ({
             </div>
 
             <div className="flex">
-                {menuHeaderPatient.map((item) => (
-                    <button
-                        key={item.select}
-                        className={`text-gray-400 px-4 py-2 text-sm font-semibold border-b-2 border-gray-200 hover:border-blue-500 focus:outline-none ${selectedMenu === item.select ? 'text-blue-500 border-blue-500' : ''}`}
-                        onClick={() => handleMenuClick(item.select)}
-                    >
-                        {item.label}
-                    </button>
-                ))}
+                {menuHeaderPatient.map((item, index) => {
+                    const isSelected = selectedMenu === item.select
+                    return (
+                        <button
+                            key={index}
+                            className={`px-4 py-2 border-b-2 border-b-2 hover:border-blue-500 focus:outline-none ${isSelected ? 'text-blue-500 border-blue-500' : 'border-gray-200 text-gray-400'}`}
+                            onClick={() => handleMenuClick(item.select)}
+                        >
+                            {item.label}
+                        </button>
+                    )
+                })}
             </div>
 
             <div className="pt-8">
