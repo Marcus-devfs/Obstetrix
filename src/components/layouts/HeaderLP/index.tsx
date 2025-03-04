@@ -9,8 +9,10 @@ import { SectionWrapper, ContainerWrapper } from '@/components/wrappers'
 import { GiWireframeGlobe } from 'react-icons/gi'
 import { FiDollarSign } from 'react-icons/fi'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 export const HeaderLp = () => {
+    const router = useRouter()
     return (
         <SectionWrapper>
             <ContainerWrapper>
@@ -28,19 +30,16 @@ export const HeaderLp = () => {
                         </span>
                     </div>
                     <Navigator />
-                    <Link href="/login">
-                        <Button
-                            className="hidden md:flex"
-                            ui="primary"
-                            endContent={<MdArrowForward color="white" />}
-                            onClick={(e) => {
-                                e.preventDefault()
-                                e.stopPropagation()
-                            }}
-                        >
-                            Fazer Login
-                        </Button>
-                    </Link>
+                    <Button
+                        className="hidden md:flex"
+                        ui="primary"
+                        endContent={<MdArrowForward color="white" />}
+                        onClick={(e) => {
+                            router.push('/login')
+                        }}
+                    >
+                        Fazer Login
+                    </Button>
 
                     <Button
                         isIconOnly
