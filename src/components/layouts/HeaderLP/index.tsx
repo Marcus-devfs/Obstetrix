@@ -33,6 +33,10 @@ export const HeaderLp = () => {
                             className="hidden md:flex"
                             ui="primary"
                             endContent={<MdArrowForward color="white" />}
+                            onClick={(e) => {
+                                e.preventDefault()
+                                e.stopPropagation()
+                            }}
                         >
                             Fazer Login
                         </Button>
