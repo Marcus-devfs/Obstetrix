@@ -27,16 +27,16 @@ interface Row {
 const patients: Patient[] = [
     {
         id: 1,
-        name: 'Marcus Silva',
-        email: 'marcus.silva@email.com',
+        name: 'Dallila Almeida',
+        email: 'dallila.almeida@email.com',
         telephone: '123456789',
         lastVisit: '2023-01-01',
-        avatar: 'https://randomuser.me/api/portraits/men/5.jpg',
+        avatar: 'https://randomuser.me/api/portraits/women/5.jpg',
     },
     {
         id: 2,
         name: 'Marcia Silva',
-        email: 'marcia.SILVA@email.com',
+        email: 'marcia.silva@email.com',
         telephone: '123456789',
         lastVisit: '2023-01-01',
         avatar: 'https://randomuser.me/api/portraits/women/4.jpg',

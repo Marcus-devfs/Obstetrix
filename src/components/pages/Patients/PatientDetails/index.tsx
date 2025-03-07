@@ -4,6 +4,8 @@ import { Text } from '@/components/ui/atoms'
 import Image from 'next/image'
 import { useState } from 'react'
 import { InformationPatient } from './Information'
+import { ClinicData } from './ClinicData'
+import { PregnancyPatient } from './Pregnancy'
 
 interface Patient {
     id: number
@@ -16,12 +18,20 @@ interface Patient {
 
 const menuHeaderPatient = [
     {
-        label: 'Informações',
+        label: 'Informações Pessoais',
         select: 'information',
     },
     {
-        label: 'Agendamentos',
-        select: 'appointments',
+        label: 'Dados Clinicos',
+        select: 'clinic',
+    },
+    {
+        label: 'Gestação',
+        select: 'pregnancy',
+    },
+    {
+        label: 'Consultas',
+        select: 'consults',
     },
 ]
 
@@ -32,11 +42,11 @@ export const PatientDetails = ({
 }) => {
     const [patient, setPatient] = useState<Patient>({
         id: 1,
-        name: 'Marcus Silva',
-        email: 'marcus.silva@email.com',
+        name: 'Renata Silva',
+        email: 'renata.silva@email.com',
         telephone: '123456789',
         lastVisit: '2023-01-01',
-        avatar: 'https://randomuser.me/api/portraits/men/5.jpg',
+        avatar: 'https://randomuser.me/api/portraits/women/5.jpg',
     })
     const [selectedMenu, setSelectedMenu] = useState('information')
 
@@ -78,6 +88,8 @@ export const PatientDetails = ({
 
             <div className="pt-8">
                 {selectedMenu === 'information' && <InformationPatient />}
+                {selectedMenu === 'clinic' && <ClinicData />}
+                {selectedMenu === 'pregnancy' && <PregnancyPatient />}
             </div>
         </div>
     )

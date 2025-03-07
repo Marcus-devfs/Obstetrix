@@ -1,8 +1,6 @@
 'use client'
 
 import React from 'react'
-import { maskPhone } from '@/helpers/utils'
-
 import {
     Form,
     FormField,
@@ -13,10 +11,10 @@ import {
 import { Input } from '@nextui-org/react'
 import { Button } from '@/components/ui/atoms'
 import { MdArrowForward } from 'react-icons/md'
-import { useUserInformationHook } from './FormUserHook'
+import { usePatientClinicHook } from './FormPatientClinicHook'
 
-export const FormUserInformation = () => {
-    const { form, handleSubmit, loading } = useUserInformationHook()
+export const FormPatientClinic = () => {
+    const { form, handleSubmit, loading } = usePatientClinicHook()
 
     return (
         <Form {...form}>
@@ -26,14 +24,14 @@ export const FormUserInformation = () => {
             >
                 <FormField
                     control={form.control}
-                    name="name"
+                    name="doctor_reference"
                     render={({ field }) => (
                         <FormItem>
                             <FormControl>
                                 <Input
-                                    placeholder="Seu nome completo"
+                                    placeholder="Nome do Doutor de referência"
                                     {...field}
-                                    label="Nome"
+                                    label="Doutor de Referência"
                                     isRequired
                                 />
                             </FormControl>
@@ -41,46 +39,18 @@ export const FormUserInformation = () => {
                         </FormItem>
                     )}
                 />
+
                 <FormField
                     control={form.control}
-                    name="email"
+                    name="assistence_plan"
                     render={({ field }) => (
                         <FormItem>
                             <FormControl>
                                 <Input
-                                    placeholder="E-mail"
+                                    placeholder="Seu plano assistencial"
                                     {...field}
-                                    label="exemple@exemple.com"
+                                    label="Plano Assistencial"
                                     isRequired
-                                />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-                <FormField
-                    control={form.control}
-                    name="phone"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormControl>
-                                <Input
-                                    placeholder="(XX) XXXXX-XXXX"
-                                    {...field}
-                                    label="Telefone"
-                                    isRequired
-                                    onChange={(e) => {
-                                        console.log(e.target.value)
-                                        const rawValue = e.target.value.replace(
-                                            /\D/g,
-                                            ''
-                                        )
-                                        if (rawValue.length <= 11) {
-                                            field.onChange(
-                                                maskPhone(e.target.value)
-                                            )
-                                        }
-                                    }}
                                 />
                             </FormControl>
                             <FormMessage />

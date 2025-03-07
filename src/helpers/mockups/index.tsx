@@ -8,7 +8,14 @@ import image2 from '../../../public/image2.png'
 import image3 from '../../../public/image3.png'
 import image4 from '../../../public/image4.png'
 import image5 from '../../../public/image5.png'
-import { FaHome, FaUser, FaCog, FaChartBar, FaCalendar } from 'react-icons/fa'
+import {
+    FaHome,
+    FaUser,
+    FaCog,
+    FaChartBar,
+    FaCalendar,
+    FaNotesMedical,
+} from 'react-icons/fa'
 
 export const dataMenuLp: Array<itemMenuLpProps> = [
     {
@@ -56,6 +63,11 @@ export const menuGroups = [
                 link: '/appointments',
                 icon: <FaCalendar />,
             },
+            {
+                label: 'Consultas',
+                link: '/consults',
+                icon: <FaNotesMedical />,
+            },
         ],
     },
     {
@@ -70,4 +82,10 @@ export const menuGroups = [
             },
         ],
     },
+]
+
+export const clinics = [
+    { clinicId: '1', clinicName: 'Clínica Saúde Total' },
+    { clinicId: '2', clinicName: 'Clínica Vida Plena' },
+    { clinicId: '3', clinicName: 'Clínica Bem-Estar' },
 ]

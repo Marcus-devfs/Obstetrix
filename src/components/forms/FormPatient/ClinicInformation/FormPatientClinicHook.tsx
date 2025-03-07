@@ -3,18 +3,14 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-export const useUserInformationHook = () => {
+export const usePatientClinicHook = () => {
     const FormSchema = z.object({
-        name: z.string().min(3, {
-            message: 'O nome deve conter ao menos 3 caracteres',
+        doctor_reference: z.string().min(3, {
+            message: 'O doutor de referência deve conter ao menos 3 caracteres',
         }),
-        email: z.string().email({
-            message: 'O email deve ser válido',
+        assistence_plan: z.string().min(3, {
+            message: 'O Plano de Assistência deve conter ao menos 3 caracteres',
         }),
-        phone: z.string().min(11, {
-            message: 'O número deve estar completo',
-        }),
-        msg: z.string().optional(),
     })
 
     const [loading, setLoading] = useState(false)
@@ -23,10 +19,8 @@ export const useUserInformationHook = () => {
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
         defaultValues: {
-            name: '',
-            email: '',
-            phone: '',
-            msg: '',
+            doctor_reference: '',
+            assistence_plan: '',
         },
     })
 
