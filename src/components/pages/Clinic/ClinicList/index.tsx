@@ -9,39 +9,19 @@ import Image from 'next/image'
 import { Text } from '@/components/ui/atoms'
 import { MdEmail } from 'react-icons/md'
 import { useRouter } from 'next/navigation'
-
-interface User {
-    id: number
-    name: string
-    email: string
-    avatar: string
-}
+import { Clinic } from '@/helpers/typesAndInterfaces'
+import { clinics } from '@/helpers/mockups'
 
 interface Row {
-    original: User
+    original: Clinic
 }
 
-const users: User[] = [
-    {
-        id: 1,
-        name: 'João Silva',
-        email: 'joao@email.com',
-        avatar: 'https://randomuser.me/api/portraits/men/1.jpg',
-    },
-    {
-        id: 2,
-        name: 'Maria Oliveira',
-        email: 'maria@email.com',
-        avatar: 'https://randomuser.me/api/portraits/women/2.jpg',
-    },
-]
-
-export const UsersList = () => {
-    const [selectedUsers, setSelectedUsers] = useState<number[]>([])
+export const ClinicList = () => {
+    const [selectedClinic, setSelectedClinic] = useState<string[]>([])
     const router = useRouter()
 
-    const toggleSelectUser = (id: number) => {
-        setSelectedUsers((prev) =>
+    const toggleSelectUser = (id: string) => {
+        setSelectedClinic((prev) =>
             prev.includes(id) ? prev.filter((uid) => uid !== id) : [...prev, id]
         )
     }
@@ -52,35 +32,46 @@ export const UsersList = () => {
             header: <Checkbox aria-label="Selecionar Todos" />,
             cell: ({ row }: { row: Row }) => (
                 <Checkbox
-                    isSelected={selectedUsers.includes(row.original.id)}
-                    onChange={() => toggleSelectUser(row.original.id)}
-                    aria-label={`Selecionar ${row.original.name}`}
+                    isSelected={selectedClinic.includes(row.original.clinicId)}
+                    onChange={() => toggleSelectUser(row.original.clinicId)}
+                    aria-label={`Selecionar ${row.original.clinicName}`}
                 />
             ),
         },
         {
-            id: 'user',
-            header: 'Usuário',
+            id: 'clinic',
+            header: 'Clínica',
             cell: ({ row }: { row: Row }) => (
                 <div className="flex items-center gap-3">
                     <Image
                         src={row.original.avatar}
-                        alt={row.original.name}
+                        alt={row.original.clinicName}
                         width={32}
                         height={32}
                         className="rounded-full"
                     />
-                    <Text.Content>{row.original.name}</Text.Content>
+                    <Text.Content>{row.original.clinicName}</Text.Content>
                 </div>
             ),
         },
         {
-            id: 'email',
-            header: 'Email',
+            id: 'clinic_responsible',
+            header: 'Responsável',
+            cell: ({ row }: { row: Row }) => (
+                <div className="flex items-center gap-3">
+                    <Text.Content>
+                        {row.original.clinicResponsable}
+                    </Text.Content>
+                </div>
+            ),
+        },
+        {
+            id: 'clinic_contact',
+            header: 'Contato',
             cell: ({ row }: { row: Row }) => (
                 <div className="flex items-center gap-3">
                     <MdEmail />
-                    <Text.Content>{row.original.email}</Text.Content>
+                    <Text.Content>{row.original.clinicContact}</Text.Content>
                 </div>
             ),
         },
@@ -101,22 +92,22 @@ export const UsersList = () => {
     ]
 
     const handleFilter = () => {
-        console.log('Filtrar Usuários')
+        console.log('Filtrar Clinicas')
     }
 
-    const handleAddUser = () => {
-        router.push('/usuarios/new')
+    const handleAddClinic = () => {
+        router.push('/clinica/novo')
     }
 
     return (
         <div className="w-full px-2 pt-4">
             <HeaderTable
-                title="Total de Usuários"
-                count={users.length}
+                title="Total de Clinicas"
+                count={clinics.length}
                 onFilterClick={handleFilter}
-                onAddClick={handleAddUser}
+                onAddClick={handleAddClinic}
             />
-            <Table columns={columns} data={users} />
+            <Table columns={columns} data={clinics} />
         </div>
     )
 }

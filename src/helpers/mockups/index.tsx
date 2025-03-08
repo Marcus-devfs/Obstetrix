@@ -2,7 +2,7 @@ import { RiHome6Fill } from 'react-icons/ri'
 import { LuInfo } from 'react-icons/lu'
 import { CgWebsite } from 'react-icons/cg'
 import { LuContact } from 'react-icons/lu'
-import { itemMenuLpProps } from '../typesAndInterfaces'
+import { Clinic, itemMenuLpProps } from '../typesAndInterfaces'
 import image1 from '../../../public/image1.png'
 import image2 from '../../../public/image2.png'
 import image3 from '../../../public/image3.png'
@@ -16,6 +16,7 @@ import {
     FaCalendar,
     FaNotesMedical,
 } from 'react-icons/fa'
+import { BiSolidReport } from 'react-icons/bi'
 
 export const dataMenuLp: Array<itemMenuLpProps> = [
     {
@@ -57,24 +58,29 @@ export const menuGroups = [
                 badge: 'Novo',
                 badgeColor: 'text-primary',
             },
-            { label: 'Pacientes', link: '/patients', icon: <FaUser /> },
+            { label: 'Pacientes', link: '/pacientes', icon: <FaUser /> },
             {
                 label: 'Agendamentos',
-                link: '/appointments',
+                link: '/agendamentos',
                 icon: <FaCalendar />,
             },
             {
                 label: 'Consultas',
-                link: '/consults',
+                link: '/consultas',
                 icon: <FaNotesMedical />,
+            },
+            {
+                label: 'Relatórios',
+                link: '/relatorios',
+                icon: <BiSolidReport />,
             },
         ],
     },
     {
         title: 'Administração',
         items: [
-            { label: 'Usuários', link: '/users', icon: <FaUser /> },
-            { label: 'Clinicas', link: '/clinics', icon: <FaChartBar /> },
+            { label: 'Usuários', link: '/usuarios', icon: <FaUser /> },
+            { label: 'Clinicas', link: '/clinicas', icon: <FaChartBar /> },
             {
                 label: 'Configurações',
                 link: '/config',
@@ -84,8 +90,26 @@ export const menuGroups = [
     },
 ]
 
-export const clinics = [
-    { clinicId: '1', clinicName: 'Clínica Saúde Total' },
-    { clinicId: '2', clinicName: 'Clínica Vida Plena' },
-    { clinicId: '3', clinicName: 'Clínica Bem-Estar' },
+export const clinics: Clinic[] = [
+    {
+        clinicId: '1',
+        clinicName: 'Clínica Saúde Total',
+        clinicContact: 'clinica_saude@email',
+        clinicResponsable: 'João Silva',
+        avatar: 'https://picsum.photos/200?random=1',
+    },
+    {
+        clinicId: '2',
+        clinicName: 'Clínica Vida Plena',
+        clinicContact: 'clinica_vida@email',
+        clinicResponsable: 'Maria Souza',
+        avatar: 'https://picsum.photos/200?random=2',
+    },
+    {
+        clinicId: '3',
+        clinicName: 'Clínica Bem-Estar',
+        clinicContact: 'clinica_bem@email',
+        clinicResponsable: 'Carlos Mendes',
+        avatar: 'https://picsum.photos/200?random=3',
+    },
 ]

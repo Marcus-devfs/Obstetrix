@@ -137,7 +137,7 @@ export const PatientsList = () => {
     }
 
     const handleAddUser = () => {
-        router.push('/patients/new')
+        router.push('/pacientes/novo')
     }
 
     return (
