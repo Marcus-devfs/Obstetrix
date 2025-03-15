@@ -25,7 +25,7 @@ type SidebarProps = {
 }
 
 export const Sidebar = ({ menuGroups }: SidebarProps) => {
-    const pathname = usePathname() // Pega a rota atual
+    const pathname = usePathname()
 
     return (
         <aside className="w-64 bg-gray-100 h-screen p-4">
