@@ -38,56 +38,55 @@ export const Sidebar = ({ menuGroups }: SidebarProps) => {
 
             <nav>
                 {menuGroups.map(({ title, items }) => (
-                    <div key={title} className="mb-4">
+                    <div key={`${title}-${items[0].link}`} className="mb-4">
                         <Text.H4 className="mb-2">{title}</Text.H4>
                         <ul className="space-y-2">
                             {items.map(
                                 ({ label, link, icon, badge, badgeColor }) => {
                                     const isActive = pathname === link
                                     return (
-                                        <li key={link}>
-                                            <Link
-                                                href={link}
-                                                className={cn(
-                                                    'flex items-center p-3 rounded-md transition',
-                                                    isActive
-                                                        ? 'bg-primary-100'
-                                                        : 'hover:bg-gray-200'
-                                                )}
-                                            >
-                                                {icon && (
-                                                    <span
-                                                        className={cn(
-                                                            'mr-2',
-                                                            isActive
-                                                                ? 'text-primary'
-                                                                : 'text-gray-400'
-                                                        )}
-                                                    >
-                                                        {icon}
-                                                    </span>
-                                                )}
-                                                <Text.Content
+                                        <Link
+                                            key={link}
+                                            href={link}
+                                            className={cn(
+                                                'flex items-center p-3 rounded-md transition',
+                                                isActive
+                                                    ? 'bg-primary-100'
+                                                    : 'hover:bg-gray-200'
+                                            )}
+                                        >
+                                            {icon && (
+                                                <span
                                                     className={cn(
+                                                        'mr-2',
                                                         isActive
                                                             ? 'text-primary'
-                                                            : 'text-gray-600'
+                                                            : 'text-gray-400'
                                                     )}
                                                 >
-                                                    {label}
-                                                </Text.Content>
-                                                {badge && (
-                                                    <span
-                                                        className={cn(
-                                                            'px-2 py-1 text-xs rounded-md',
-                                                            badgeColor
-                                                        )}
-                                                    >
-                                                        {badge}
-                                                    </span>
+                                                    {icon}
+                                                </span>
+                                            )}
+                                            <Text.Content
+                                                className={cn(
+                                                    isActive
+                                                        ? 'text-primary'
+                                                        : 'text-gray-600'
                                                 )}
-                                            </Link>
-                                        </li>
+                                            >
+                                                {label}
+                                            </Text.Content>
+                                            {badge && (
+                                                <span
+                                                    className={cn(
+                                                        'px-2 py-1 text-xs rounded-md',
+                                                        badgeColor
+                                                    )}
+                                                >
+                                                    {badge}
+                                                </span>
+                                            )}
+                                        </Link>
                                     )
                                 }
                             )}

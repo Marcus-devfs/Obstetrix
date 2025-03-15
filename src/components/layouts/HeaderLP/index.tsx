@@ -9,8 +9,10 @@ import { SectionWrapper, ContainerWrapper } from '@/components/wrappers'
 import { GiWireframeGlobe } from 'react-icons/gi'
 import { FiDollarSign } from 'react-icons/fi'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 export const HeaderLp = () => {
+    const router = useRouter()
     return (
         <SectionWrapper>
             <ContainerWrapper>
@@ -28,15 +30,16 @@ export const HeaderLp = () => {
                         </span>
                     </div>
                     <Navigator />
-                    <Link href="/login">
-                        <Button
-                            className="hidden md:flex"
-                            ui="primary"
-                            endContent={<MdArrowForward color="white" />}
-                        >
-                            Fazer Login
-                        </Button>
-                    </Link>
+                    <Button
+                        className="hidden md:flex"
+                        ui="primary"
+                        endContent={<MdArrowForward color="white" />}
+                        onClick={(e) => {
+                            router.push('/login')
+                        }}
+                    >
+                        Fazer Login
+                    </Button>
 
                     <Button
                         isIconOnly
@@ -74,7 +77,7 @@ const Navigator = () => {
         <div className=" bg-white h-full rounded-full flex p-1">
             {dataMenuLp.map((item: itemMenuLpProps, index: number) => (
                 <ItemNavigator
-                    key={`itemNavigator-${index}`}
+                    key={`itemNavigator-${index}-${item.value}`}
                     icon={
                         itemActive === item.value ? item.activeIcon : item.icon
                     }

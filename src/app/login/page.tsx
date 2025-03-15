@@ -45,8 +45,10 @@ export default function LoginPage() {
                                 <FormLogin />
                             </div>
 
-                            <Text.Content className="flex gap-2 items-center">
-                                Don&apos;t have an account?{' '}
+                            <div className="flex gap-2 items-center">
+                                <Text.Content>
+                                    Don&apos;t have an account?
+                                </Text.Content>
                                 <Text.LightButton>
                                     <a
                                         href="/register"
@@ -54,8 +56,8 @@ export default function LoginPage() {
                                     >
                                         Sign up
                                     </a>
-                                </Text.LightButton>{' '}
-                            </Text.Content>
+                                </Text.LightButton>
+                            </div>
                         </div>
                     </div>
 

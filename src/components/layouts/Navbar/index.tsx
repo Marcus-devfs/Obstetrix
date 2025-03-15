@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { ChevronDown, Search } from 'lucide-react'
 import { Avatar } from '@nextui-org/react'
-import { Text } from '@/components/ui/atoms'
+import { Button, Text } from '@/components/ui/atoms'
 
 const user = {
     name: 'Marcus Vinicius',
@@ -28,7 +28,7 @@ export const Navbar = ({ title = 'Title' }: { title?: string }) => {
                 <input
                     type="text"
                     placeholder="Pesquisar..."
-                    className="w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-full pl-10 pr-4 py-2 border bg-gray-100 rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none"
                 />
             </div>
 
@@ -50,14 +50,15 @@ export const Navbar = ({ title = 'Title' }: { title?: string }) => {
 
                 {isOpen && (
                     <div className="absolute right-0 mt-2 w-56 bg-white border rounded-lg shadow-lg p-4">
-                        <p className="font-medium text-gray-800">{user.name}</p>
-                        <p className="text-sm text-gray-500">{user.email}</p>
-                        <button
-                            className="mt-3 w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600"
+                        <Text.H4>{user.name}</Text.H4>
+                        <Text.Content>{user.email}</Text.Content>
+
+                        <Button
+                            className="bg-red-500 text-white hover:bg-red-600 w-full mt-4"
                             onClick={() => alert('Sair da conta')}
                         >
                             Sair
-                        </button>
+                        </Button>
                     </div>
                 )}
             </div>

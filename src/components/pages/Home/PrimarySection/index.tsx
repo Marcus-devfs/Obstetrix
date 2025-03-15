@@ -80,7 +80,7 @@ export const PrimarySection = () => {
                                 ) => (
                                     <CardImage
                                         src={item}
-                                        key={`card-image-${index}`}
+                                        key={`card-image-${index}-${item}`}
                                         active={index === activeImage.index}
                                         onClick={() =>
                                             setActiveImage({
