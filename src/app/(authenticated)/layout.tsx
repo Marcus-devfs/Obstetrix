@@ -1,11 +1,17 @@
 import { Sidebar } from '@/components/layouts/Sidebar'
 import { menuGroups } from '@/helpers/mockups'
+import { auth } from '@/auth'
+import { redirect } from 'next/navigation'
+import { signOut } from 'next-auth/react'
 
-export default function AuthenticatedLayout({
+export default async function AuthenticatedLayout({
     children,
 }: {
     children: React.ReactNode
 }) {
+    const session = await auth()
+    if (!session?.user) redirect('/login')
+
     return (
         <div className="flex bg-white">
             <Sidebar menuGroups={menuGroups} />

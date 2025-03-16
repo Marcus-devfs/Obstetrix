@@ -4,7 +4,7 @@ import React from 'react'
 import { FaFacebook } from 'react-icons/fa' // Ícones do Google e Facebook
 import { FcGoogle } from 'react-icons/fc' // Ícone do Email
 import { ButtonProps } from '../../shadcn/button'
-import { Text } from '..'
+import { Text } from '../../atoms'
 
 interface thisProps extends ButtonProps {
     ui?: 'primary' | 'secondary'

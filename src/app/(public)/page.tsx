@@ -1,7 +1,22 @@
-import { HomePage } from '@/components/pages'
+import { PageWrapper } from '@/components/wrappers'
+import {
+    AboutUs,
+    PrimarySection,
+    SecondarySection,
+    TertiarySection,
+    ContactUs,
+} from '@/components/pages/Home'
 
-const Home = () => {
-    return <HomePage />
+const HomePage = () => {
+    return (
+        <PageWrapper className="pb-4">
+            <PrimarySection />
+            <AboutUs />
+            <SecondarySection />
+            <TertiarySection />
+            <ContactUs />
+        </PageWrapper>
+    )
 }
 
-export default Home
+export default HomePage

@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useRouter } from 'next/navigation'
+import { signIn } from 'next-auth/react'
 
 export const useLoginHook = () => {
     const FormSchema = z.object({
@@ -16,21 +17,24 @@ export const useLoginHook = () => {
 
     const [loading, setLoading] = useState(false)
     const [formSend, setFormSend] = useState<boolean | null>(null)
-    const router = useRouter()
 
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
         defaultValues: {
-            email: 'marcusvini6277@gmail.com',
-            password: '123456',
+            email: 'ce.fonsecasilva@gmail.com',
+            password: '23684379',
         },
     })
 
     async function handleSubmit(data: z.infer<typeof FormSchema>) {
-        setLoading(true)
-        console.log(data)
-        router.push('/dashboard')
-        setLoading(false)
+        try {
+            setLoading(true)
+            await signIn('credentials', data)
+        } catch (e) {
+            console.error(e)
+        } finally {
+            setLoading(false)
+        }
     }
 
     return {

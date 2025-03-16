@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { signOut } from 'next-auth/react'
 import { ChevronDown, Search } from 'lucide-react'
 import { Avatar } from '@nextui-org/react'
 import { Button, Text } from '@/components/ui/atoms'
@@ -55,7 +56,8 @@ export const Navbar = ({ title = 'Title' }: { title?: string }) => {
 
                         <Button
                             className="bg-red-500 text-white hover:bg-red-600 w-full mt-4"
-                            onClick={() => alert('Sair da conta')}
+                            size="sm"
+                            onClick={async () => await signOut()}
                         >
                             Sair
                         </Button>

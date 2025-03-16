@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { useLoginHook } from './FormLoginHooks'
+import { useLoginHook } from './FormLogin.hooks'
 import {
     Form,
     FormField,
@@ -29,9 +29,9 @@ export const FormLogin = () => {
                         <FormItem>
                             <FormControl>
                                 <Input
-                                    placeholder="E-mail"
+                                    placeholder="exemple@exemple.com"
                                     {...field}
-                                    label="exemple@exemple.com"
+                                    label="E-mail"
                                     isRequired
                                 />
                             </FormControl>
