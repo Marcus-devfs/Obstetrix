@@ -2,12 +2,15 @@ import { Text } from '@/components/ui/atoms'
 import { IndicatorsCard } from './IndicatorsCard'
 import { FaUserCheck } from 'react-icons/fa'
 import { FaArrowTrendUp, FaArrowTrendDown } from 'react-icons/fa6'
+import { auth } from '@/auth'
 
-export const Dashboard = () => {
+export const Dashboard = async () => {
+    const session = await auth()
+    const firstName = session?.user?.name?.split(' ')[0]
     return (
         <div className="flex flex-col gap-2">
             <Text.Customize className="text-2xl">
-                Seja Bem-Vindo, Marcus!
+                {`Seja Bem-Vindo, ${firstName}!`}
             </Text.Customize>
             <Text.Stick>
                 Você possúi <strong>3 consultas pendentes</strong>, e{' '}
