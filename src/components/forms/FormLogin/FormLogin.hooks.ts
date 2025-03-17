@@ -29,7 +29,7 @@ export const useLoginHook = () => {
     async function handleSubmit(data: z.infer<typeof FormSchema>) {
         try {
             setLoading(true)
-            await signIn('credentials', data)
+            await signIn('credentials', { redirectTo: '/dashboard', ...data })
         } catch (e) {
             console.error(e)
         } finally {

@@ -62,7 +62,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                         provider: account?.provider,
                     })
                 }
-
                 token.id = user.id
                 token.email = user.email
                 token.name = user.name
@@ -109,8 +108,6 @@ const getCredentialUser = async (
         const { data: sessionData } = res
         const { user, token } = sessionData
 
-        console.log(user, 'user')
-
         return {
             ...user,
             accessToken: token,
@@ -137,18 +134,20 @@ const setProviderInDatabase = async (
             provider: account.provider,
             name: user.name,
             email: user.email,
-            avatar: user.image ? user.image : ``,
+            image: user.image ? user.image : ``,
             accountId: createMD5(account.providerAccountId),
         }
 
-        // const res = await fetchApi(`/signUp`, {
-        //   method: 'post',
-        //   body: JSON.stringify(data),
-        // })
-        // const { success } = res
-        // if (!success) {
-        //   return false
-        // }
+        const res = await fetchApi(`/auth/signUp`, {
+            method: 'post',
+            body: JSON.stringify(data),
+        })
+
+        const { success } = res
+
+        if (!success) {
+            return false
+        }
         return true
     } catch (error) {
         return false

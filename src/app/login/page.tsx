@@ -15,7 +15,7 @@ export default function LoginPage() {
     const searchParams = useSearchParams()
     const error = searchParams.get('error')
     const code = searchParams.get('code')
-    const { data: session } = useSession()
+
     return (
         <PageWrapper className="!h-screen items-center justify-center">
             <SectionWrapper>

@@ -5,16 +5,15 @@ import { signOut } from 'next-auth/react'
 import { ChevronDown, Search } from 'lucide-react'
 import { Avatar } from '@nextui-org/react'
 import { Button, Text } from '@/components/ui/atoms'
+import { useSession } from 'next-auth/react'
 
-const user = {
-    name: 'Marcus Vinicius',
-    email: 'marcusvini6277@gmail.com',
-    avatarUrl: '/profile-icon.jpeg',
+interface NavbarProps {
+    title?: string
 }
 
-export const Navbar = ({ title = 'Title' }: { title?: string }) => {
+export const Navbar: React.FC<NavbarProps> = ({ title }) => {
     const [isOpen, setIsOpen] = useState(false)
-
+    const { data: session } = useSession()
     return (
         <nav className="fixed top-0 left-64 right-0 w-[calc(100%-16rem)] flex items-center justify-between bg-white shadow-md px-6 py-3 z-50">
             {/* Título */}
@@ -41,18 +40,18 @@ export const Navbar = ({ title = 'Title' }: { title?: string }) => {
                 >
                     <div className="flex w-8 h-8">
                         <Avatar
-                            src={user.avatarUrl}
+                            src={session?.user?.image || ''}
                             className="w-full h-full"
                         />
                     </div>
-                    <Text.Content>{user.name}</Text.Content>
+                    <Text.Content>{session?.user?.name}</Text.Content>
                     <ChevronDown className="text-gray-600" size={18} />
                 </button>
 
                 {isOpen && (
                     <div className="absolute right-0 mt-2 w-56 bg-white border rounded-lg shadow-lg p-4">
-                        <Text.H4>{user.name}</Text.H4>
-                        <Text.Content>{user.email}</Text.Content>
+                        <Text.H4>{session?.user?.name}</Text.H4>
+                        <Text.Content>{session?.user?.email}</Text.Content>
 
                         <Button
                             className="bg-red-500 text-white hover:bg-red-600 w-full mt-4"
