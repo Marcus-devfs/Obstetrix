@@ -1,6 +1,6 @@
 'use client'
 
-import { signIn, signOut } from 'next-auth/react'
+import { signIn } from 'next-auth/react'
 import { FormLogin } from '@/components/forms'
 import { Text, Logo, SocialButton } from '@/components/ui/atoms'
 import {
@@ -8,14 +8,8 @@ import {
     PageWrapper,
     SectionWrapper,
 } from '@/components/wrappers'
-import { useSearchParams, useRouter } from 'next/navigation'
-import { useSession } from 'next-auth/react'
 
 export default function LoginPage() {
-    const searchParams = useSearchParams()
-    const error = searchParams.get('error')
-    const code = searchParams.get('code')
-
     return (
         <PageWrapper className="!h-screen items-center justify-center">
             <SectionWrapper>

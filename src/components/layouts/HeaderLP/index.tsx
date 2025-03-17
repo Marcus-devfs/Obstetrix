@@ -8,7 +8,6 @@ import { itemMenuLpProps } from '@/helpers/typesAndInterfaces'
 import { SectionWrapper, ContainerWrapper } from '@/components/wrappers'
 import { GiWireframeGlobe } from 'react-icons/gi'
 import { FiDollarSign } from 'react-icons/fi'
-import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
 export const HeaderLp = () => {
@@ -34,7 +33,7 @@ export const HeaderLp = () => {
                         className="hidden md:flex"
                         ui="primary"
                         endContent={<MdArrowForward color="white" />}
-                        onClick={(e) => {
+                        onClick={() => {
                             router.push('/login')
                         }}
                     >

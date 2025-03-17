@@ -2,7 +2,6 @@ import { Sidebar } from '@/components/layouts/Sidebar'
 import { menuGroups } from '@/helpers/mockups'
 import { auth } from '@/auth'
 import { redirect } from 'next/navigation'
-import { signOut } from 'next-auth/react'
 
 export default async function AuthenticatedLayout({
     children,
