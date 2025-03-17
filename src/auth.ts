@@ -1,4 +1,4 @@
-import NextAuth, { Account, User, type DefaultSession } from 'next-auth'
+import NextAuth, { Account, User } from 'next-auth'
 import { AdapterUser } from '@auth/core/adapters'
 import Google from 'next-auth/providers/google'
 import Credentials from 'next-auth/providers/credentials'
@@ -111,7 +111,7 @@ const getCredentialUser = async (
         return {
             ...user,
             accessToken: token,
-        } as any
+        } as User
     } catch (e) {
         if (e instanceof Error) {
             throw new Error(e.message)
@@ -150,6 +150,7 @@ const setProviderInDatabase = async (
         }
         return true
     } catch (error) {
+        console.error(error)
         return false
     }
 }
