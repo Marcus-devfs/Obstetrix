@@ -20,8 +20,8 @@ export const useLoginHook = () => {
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
         defaultValues: {
-            email: 'ce.fonsecasilva@gmail.com',
-            password: '23684379',
+            email: 'marcusvini6277@gmail.com',
+            password: '12345678',
         },
     })
 
