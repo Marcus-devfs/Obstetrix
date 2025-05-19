@@ -9,7 +9,7 @@ interface BreadcrumbProps {
 
 export const Breadcrumb = ({ items }: BreadcrumbProps) => {
     return (
-        <Breadcrumbs className="border border-gray-100 py-4 px-6 fixed top-16 left-64 right-0">
+        <Breadcrumbs className="border border-gray-100 py-4 px-6 fixed top-16 left-64 right-0 bg-white z-20">
             <BreadcrumbItem>
                 <Link
                     href="/dashboard"

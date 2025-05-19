@@ -2,7 +2,7 @@ import { FormPatientPregnancy } from '@/components/forms'
 
 export const PregnancyPatient = () => {
     return (
-        <div>
+        <div className="w-full">
             <FormPatientPregnancy />
         </div>
     )

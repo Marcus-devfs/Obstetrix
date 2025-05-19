@@ -12,8 +12,8 @@ export default function UserDetailPage() {
             <Navbar title="Usuário" />
             <Breadcrumb
                 items={[
-                    { href: '/users', label: 'Usuários' },
-                    { href: '/users/new', label: 'Novo Usuário' },
+                    { href: '/usuarios', label: 'Usuários' },
+                    { href: '/usuarios/novo', label: 'Novo Usuário' },
                 ]}
             />
             <UserDetails id={`new`} />

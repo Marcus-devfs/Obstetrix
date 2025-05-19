@@ -6,7 +6,7 @@ export default function Users() {
     return (
         <div>
             <Navbar title="Usuários" />
-            <Breadcrumb items={[{ href: '/users', label: 'Usuários' }]} />
+            <Breadcrumb items={[{ href: '/usuarios', label: 'Usuários' }]} />
             <UsersList />
         </div>
     )

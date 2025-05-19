@@ -28,7 +28,7 @@ export const Sidebar = ({ menuGroups }: SidebarProps) => {
     const pathname = usePathname()
 
     return (
-        <aside className="w-64 bg-gray-100 h-screen p-4">
+        <aside className="w-64 bg-gray-100 h-screen p-4 sticky top-0">
             <div className="flex items-center justify-start pl-6 my-3 mb-12 w-full">
                 <GiWireframeGlobe color="#3b82f6" size={30} className="mr-1" />
                 <Text.H3 className="hidden md:block">Obstetrix</Text.H3>

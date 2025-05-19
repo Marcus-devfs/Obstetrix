@@ -59,7 +59,7 @@ export const PatientDetails = ({
     }
 
     return (
-        <div className="w-full px-2 pt-4">
+        <div className="flex flex-col h-screen px-2 pt-4">
             <div className="flex items-center gap-3 py-4">
                 <Image
                     src={patient.avatar}
@@ -71,13 +71,17 @@ export const PatientDetails = ({
                 <Text.H3>{patient.name}</Text.H3>
             </div>
 
-            <div className="flex">
+            <div className="flex border-b">
                 {menuHeaderPatient.map((item, index) => {
                     const isSelected = selectedMenu === item.select
                     return (
                         <button
                             key={`${item.select}-${index}`}
-                            className={`px-4 py-2 border-b-2 border-b-2 hover:border-blue-500 focus:outline-none ${isSelected ? 'text-blue-500 border-blue-500' : 'border-gray-200 text-gray-400'}`}
+                            className={`px-4 py-2 border-b-2 hover:border-blue-500 focus:outline-none ${
+                                isSelected
+                                    ? 'text-blue-500 border-blue-500'
+                                    : 'border-transparent text-gray-400'
+                            }`}
                             onClick={() => handleMenuClick(item.select)}
                         >
                             {item.label}
@@ -86,7 +90,7 @@ export const PatientDetails = ({
                 })}
             </div>
 
-            <div className="pt-8">
+            <div className="flex-1 overflow-y-auto pt-8">
                 {selectedMenu === 'information' && <InformationPatient />}
                 {selectedMenu === 'clinic' && <ClinicData />}
                 {selectedMenu === 'pregnancy' && <PregnancyPatient />}

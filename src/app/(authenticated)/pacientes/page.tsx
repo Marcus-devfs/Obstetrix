@@ -6,7 +6,7 @@ export default function Patients() {
     return (
         <div>
             <Navbar title="Pacientes" />
-            <Breadcrumb items={[{ href: '/patients', label: 'Pacientes' }]} />
+            <Breadcrumb items={[{ href: '/pacientes', label: 'Pacientes' }]} />
             <PatientsList />
         </div>
     )

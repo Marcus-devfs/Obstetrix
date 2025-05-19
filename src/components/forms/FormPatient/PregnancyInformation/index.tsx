@@ -26,6 +26,25 @@ export const FormPatientPregnancy = () => {
                 className="w-full flex flex-col gap-4"
             >
                 {/* Switch entre Data da Menstruação ou Data da Concepção */}
+
+                <FormField
+                    control={form.control}
+                    name="babyName"
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormControl>
+                                <Input
+                                    placeholder="Digite o nome do bebe (caso não tenha, deixar em branco)"
+                                    {...field}
+                                    label="Nome do Bebe"
+                                    isRequired
+                                />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+
                 <FormField
                     control={form.control}
                     name="date_contage_type"
@@ -108,6 +127,39 @@ export const FormPatientPregnancy = () => {
 
                 <FormField
                     control={form.control}
+                    name="deliveryType"
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormControl className="flex">
+                                <RadioGroup
+                                    {...field}
+                                    onChange={(value) => field.onChange(value)}
+                                    className="flex flex-row items-center gap-4" // Garante exibição horizontal
+                                >
+                                    <Text.Content>Tipo de parto</Text.Content>
+                                    <div className="flex gap-4">
+                                        <Radio
+                                            value="normal"
+                                            className="flex items-center"
+                                        >
+                                            <Text.Content>Normal</Text.Content>
+                                        </Radio>
+                                        <Radio
+                                            value="cesarea"
+                                            className="flex items-center"
+                                        >
+                                            <Text.Content>Cesária</Text.Content>
+                                        </Radio>
+                                    </div>
+                                </RadioGroup>
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+
+                <FormField
+                    control={form.control}
                     name="expected_pregnancy_date"
                     render={({ field }) => (
                         <FormItem>
@@ -117,6 +169,42 @@ export const FormPatientPregnancy = () => {
                                     placeholder="Data prevista de parto"
                                     {...field}
                                     label="Data prevista de parto"
+                                    isRequired
+                                />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+
+                <FormField
+                    control={form.control}
+                    name="complications"
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormControl>
+                                <Input
+                                    placeholder="Digite as complicações"
+                                    {...field}
+                                    label="Complicações"
+                                    isRequired
+                                />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+
+                <FormField
+                    control={form.control}
+                    name="notes"
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormControl>
+                                <Input
+                                    placeholder="Observações e anotações"
+                                    {...field}
+                                    label="Observações e anotações"
                                     isRequired
                                 />
                             </FormControl>

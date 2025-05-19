@@ -12,8 +12,8 @@ export default function PatientDetail() {
             <Navbar title="Paciente" />
             <Breadcrumb
                 items={[
-                    { href: '/patients', label: 'Pacientes' },
-                    { href: '/patients/new', label: 'Novo Paciente' },
+                    { href: '/pacientes', label: 'Pacientes' },
+                    { href: '/pacientes/new', label: 'Novo Paciente' },
                 ]}
             />
             <PatientDetails id={`new`} />
